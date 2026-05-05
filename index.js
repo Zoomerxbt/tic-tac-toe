@@ -7,7 +7,7 @@ function gameboard() {
   const getBoard = () => board;
 
   //  We will need a method that will insert a token in an empty cell
-  const placeMark = (token, row, column) => {
+  const placeToken = (token, row, column) => {
     // Validate if a index is open
     if (board[row][column] !== "") {
       return "Invalid move";
@@ -21,43 +21,51 @@ function gameboard() {
     return board;
   };
 
-  return { getBoard, placeMark, printBoard };
+  return { getBoard, placeToken, printBoard };
 }
 
 // The game controller will be responsible for the flow of the game
 
-function gameController(player1 = "Player 1", player2 = "Player 2") {
+function gameController() {
   const board = gameboard();
 
   const players = [
     {
-      player1: player1,
-      token: 1,
+      player: "player1",
+      token: "X",
     },
     {
-      player2: player2,
-      token: 2,
+      player: "player2",
+      token: "O",
     },
   ];
 
-  let activePlayer = player[0];
+  let activePlayer = players[0];
 
   const switchPlayerTurn = () => {
     activePlayer = activePlayer === players[0] ? players[1] : players[0];
   };
-  const getActivePlayer = () => activePlayer;
 
-  const printNewRound = () => {
-    board.printBoard();
-    console.log(`${getActivePlayer().name}'s turn.`);
+  const getActivePlayer = () => {
+    return activePlayer;
   };
 
-  switchPlayerTurn();
+  const playRound = (row, column) => {
 
-  return {};
+    board.placeToken(getActivePlayer().token, row, column);
+
+    switchPlayerTurn();
+
+    const checkWinner = (() => {
+      // horizontal winning sequence =  3 of the same token horizontally  for 3 row
+      // Vertical winning sequence  = 3 of the same token vertically for 3 columns
+      //  diagoonal wiinning sequence = 3 of the same token diagonally
+
+      if()
+
+
+    })();
+  };
+
+  return { playRound, getActivePlayer, getBoard: board.getBoard };
 }
-
-let game = gameboard();
-
-console.table(game.placeMark("X", 0, 0));
-console.table(game.placeMark("O", 0, 0));
