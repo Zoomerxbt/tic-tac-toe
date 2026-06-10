@@ -1,0 +1,43 @@
+@layer base {
+  .text-preset-1 {
+    @apply text-[40px] font-bold uppercase;
+    line-height: 125%;
+    letter-spacing: 2.5px;
+  }
+
+  .text-preset-2 {
+    @apply text-[24px] font-bold uppercase;
+    line-height: 125%;
+    letter-spacing: 1.5px;
+  }
+
+  .text-preset-3 {
+    @apply text-[20px] font-bold uppercase;
+    line-height: 125%;
+    letter-spacing: 1.25px;
+  }
+
+  .text-preset-4 {
+    @apply text-[16px] font-bold uppercase;
+    line-height: 125%;
+    letter-spacing: 1px;
+  }
+
+  .text-preset-5-bold {
+    @apply text-[14px] font-bold;
+    line-height: 130%;
+    letter-spacing: 0.9px;
+  }
+
+  .text-preset-5-medium {
+    @apply text-[14px] font-medium;
+    line-height: 125%;
+    letter-spacing: 0.9px;
+  }
+
+  .text-preset-6 {
+    @apply text-[12px] font-medium;
+    line-height: 125%;
+    letter-spacing: 0.75px;
+  }
+}

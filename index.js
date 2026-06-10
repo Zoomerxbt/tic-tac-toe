@@ -26,6 +26,7 @@ function gameBoard() {
 
 // The game controller will be responsible for the flow of the game
 
+<<<<<<< HEAD
 function gameBoard() {
   let rows = 3;
   let columns = 3;
@@ -55,6 +56,10 @@ function gameBoard() {
 // Game controller
 function gameController() {
   const board = gameBoard();
+=======
+function gameController() {
+  const board = gameboard();
+>>>>>>> 75127d5a43cd47ab268704f355c46e54f7493fab
 
   const players = [
     {
@@ -73,6 +78,7 @@ function gameController() {
     activePlayer = activePlayer === players[0] ? players[1] : players[0];
   };
 
+<<<<<<< HEAD
   const getActivePlayer = () => activePlayer;
 
   const playRound = (row, column) => {
@@ -166,3 +172,28 @@ function gameController() {
 
 // UI controller
 function uiController() {}
+=======
+  const getActivePlayer = () => {
+    return activePlayer;
+  };
+
+  const playRound = (row, column) => {
+
+    board.placeToken(getActivePlayer().token, row, column);
+
+    switchPlayerTurn();
+
+    const checkWinner = (() => {
+      // horizontal winning sequence =  3 of the same token horizontally  for 3 row
+      // Vertical winning sequence  = 3 of the same token vertically for 3 columns
+      //  diagoonal wiinning sequence = 3 of the same token diagonally
+
+      if()
+
+
+    })();
+  };
+
+  return { playRound, getActivePlayer, getBoard: board.getBoard };
+}
+>>>>>>> 75127d5a43cd47ab268704f355c46e54f7493fab

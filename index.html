@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/output.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap"
@@ -13,16 +13,30 @@
   <title>Frontend Mentor | Tic Tac Toe</title>
 </head>
 
-<body>
+<body class="font-outfit">
 
   <!-- New game menu start -->
 
 
-  Pick player 1's mark
-  Remember: X goes first
+  <div class="bg-slate-900 py-29.75 px-[24px]  flex flex-col items-center gap-(--spacing-400,32px)">
+    <img src="assets/logo.svg" alt="Game logo">
+    <div
+      class="flex flex-col items-center gap-200 p-300 rounded-(--corner-radius-16,16px) w-full bg-slate-800 shadow-[0_-8px_0_0_#10212A_inset]">
+      <div class="flex flex-col gap-300 justify-center items-center self-stretch">
+        <h3 class="text-slate-300 text-center text-preset-4">Pick player 1's mark</h3>
+        <div class="flex justify-around gap-8 ">
+          <img src="/assets//O-mark-option.svg" alt="">
+          <img src="/assets//X-mark-option.svg" alt="">
+        </div>
+      </div>
+      <p class="text-preset-5-bold text-slate-300 uppercase">Remember: X goes first</p>
+    </div>
 
-  New Game (vs CPU)
-  New Game (vs player)
+    <div class="flex flex-col gap-200 w-full">
+      <button class=" btn-1 pt-250 pb-250 text-preset-4">New Game (vs CPU)</button>
+      <button class="btn-2 pt-250 pb-250 text-preset-4">New Game (vs player)</button>
+    </div>
+  </div>
 
 
 

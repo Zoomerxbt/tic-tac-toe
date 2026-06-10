@@ -1,0 +1,82 @@
+@layer components {
+  /* GRID CELL */
+  .grid-cell {
+    min-width: 96px;
+    max-width: 140px;
+    border-radius: var(--radius-16);
+    background: var(--color-slate-800);
+    box-shadow: 0 -8px 0 0 #10212a inset;
+  }
+
+  /* PRIMARY BUTTON */
+  .btn-1 {
+    display: flex;
+    justify-content: center;
+    align-self: stretch;
+    border-radius: var(--radius-16);
+    background: var(--color-amber-400);
+    box-shadow: 0 -8px 0 0 #cc8b13 inset;
+  }
+
+  .btn-1:hover {
+    background: var(--color-amber-300);
+  }
+
+  /* SECONDARY BUTTON */
+  .btn-2 {
+    display: flex;
+    justify-content: center;
+    align-self: stretch;
+    border-radius: var(--radius-16);
+    background: var(--color-teal-400);
+    box-shadow: 0 -8px 0 0 #118c87 inset;
+  }
+
+  .btn-2:hover {
+    background: var(--color-teal-300);
+  }
+
+  /* SMALL BUTTON */
+  .btn-3 {
+    display: flex;
+    width: 146px;
+    justify-content: center;
+    padding: var(--spacing-200);
+  }
+
+  .btn-3:hover {
+    background: var(--color-amber-300);
+    box-shadow: 0 -4px 0 0 #cc8b13 inset;
+  }
+
+  /* SQUARE BUTTON */
+  .btn-4 {
+    display: flex;
+    width: 76px;
+    justify-content: center;
+    padding: var(--spacing-200);
+    border-radius: var(--radius-10);
+    background: var(--color-slate-300);
+    box-shadow: 0 -4px 0 0 #6b8997 inset;
+  }
+
+  .btn-4:hover {
+    background: var(--color-slate-100);
+  }
+
+  /* ICON BUTTON */
+  .btn-rest {
+    display: flex;
+    width: 52px;
+    padding: var(--spacing-200);
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--radius-10);
+    background: var(--color-slate-300);
+    box-shadow: 0 -4px 0 0 #6b8997 inset;
+  }
+
+  .btn-rest:hover {
+    background: var(--color-slate-100);
+  }
+}

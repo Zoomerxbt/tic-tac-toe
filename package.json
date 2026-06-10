@@ -4,6 +4,10 @@
     "tailwindcss": "^4.3.0"
   },
   "scripts": {
-    "watch": "npx @tailwindcss/cli -i ./index.css -o ./src/output.css --watch"
+    "watch": "npx @tailwindcss/cli -i ./src/index.css -o ./src/output.css --watch"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.4",
+    "prettier-plugin-tailwindcss": "^0.8.0"
   }
 }
