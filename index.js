@@ -1,4 +1,4 @@
-function gameboard() {
+function gameBoard() {
   let rows = 3;
   let columns = 3;
 
@@ -7,7 +7,7 @@ function gameboard() {
   const getBoard = () => board;
 
   //  We will need a method that will insert a token in an empty cell
-  const placeMark = (token, row, column) => {
+  const placeToken = (token, row, column) => {
     // Validate if a index is open
     if (board[row][column] !== "") {
       return "Invalid move";
@@ -21,43 +21,148 @@ function gameboard() {
     return board;
   };
 
-  return { getBoard, placeMark, printBoard };
+  return { getBoard, placeToken, printBoard };
 }
 
 // The game controller will be responsible for the flow of the game
 
-function gameController(player1 = "Player 1", player2 = "Player 2") {
-  const board = gameboard();
+function gameBoard() {
+  let rows = 3;
+  let columns = 3;
+
+  // create two-dimensional array
+  const board = Array.from({ length: rows }, () => new Array(columns).fill(""));
+
+  const getBoard = () => board;
+
+  // insert token into board
+  const placeToken = (token, row, column) => {
+    if (board[row][column] !== "") {
+      return "Invalid move";
+    }
+
+    board[row][column] = token;
+    return board;
+  };
+
+  const printBoard = () => {
+    console.table(board);
+  };
+
+  return { getBoard, placeToken, printBoard };
+}
+
+// Game controller
+function gameController() {
+  const board = gameBoard();
 
   const players = [
     {
-      player1: player1,
-      token: 1,
+      player: "player1",
+      token: "X",
     },
     {
-      player2: player2,
-      token: 2,
+      player: "player2",
+      token: "O",
     },
   ];
 
-  let activePlayer = player[0];
+  let activePlayer = players[0];
 
   const switchPlayerTurn = () => {
     activePlayer = activePlayer === players[0] ? players[1] : players[0];
   };
+
   const getActivePlayer = () => activePlayer;
 
-  const printNewRound = () => {
-    board.printBoard();
-    console.log(`${getActivePlayer().name}'s turn.`);
+  const playRound = (row, column) => {
+    // store current player's token FIRST
+    const token = getActivePlayer().token;
+
+    // place token
+    const move = board.placeToken(token, row, column);
+
+    // stop invalid moves
+    if (move === "Invalid move") {
+      return "Invalid move";
+    }
+
+    // Winning logic
+    const checkWinner = ((token) => {
+      const boardgame = board.getBoard();
+
+      // columns
+      if (
+        boardgame[0][0] === token &&
+        boardgame[1][0] === token &&
+        boardgame[2][0] === token
+      ) {
+        return `${token} wins`;
+      } else if (
+        boardgame[0][1] === token &&
+        boardgame[1][1] === token &&
+        boardgame[2][1] === token
+      ) {
+        return `${token} wins`;
+      } else if (
+        boardgame[0][2] === token &&
+        boardgame[1][2] === token &&
+        boardgame[2][2] === token
+      ) {
+        return `${token} wins`;
+      }
+
+      // rows
+      else if (
+        boardgame[0][0] === token &&
+        boardgame[0][1] === token &&
+        boardgame[0][2] === token
+      ) {
+        return `${token} wins`;
+      } else if (
+        boardgame[1][0] === token &&
+        boardgame[1][1] === token &&
+        boardgame[1][2] === token
+      ) {
+        return `${token} wins`;
+      } else if (
+        boardgame[2][0] === token &&
+        boardgame[2][1] === token &&
+        boardgame[2][2] === token
+      ) {
+        return `${token} wins`;
+      }
+
+      // diagonals
+      else if (
+        boardgame[0][0] === token &&
+        boardgame[1][1] === token &&
+        boardgame[2][2] === token
+      ) {
+        return `${token} wins`;
+      } else if (
+        boardgame[0][2] === token &&
+        boardgame[1][1] === token &&
+        boardgame[2][0] === token
+      ) {
+        return `${token} wins`;
+      }
+
+      return "No winner yet";
+    })(token);
+
+    // switch AFTER checking winner
+    switchPlayerTurn();
+
+    return checkWinner;
   };
 
-  switchPlayerTurn();
-
-  return {};
+  return {
+    playRound,
+    getActivePlayer,
+    getBoard: board.getBoard,
+  };
 }
 
-let game = gameboard();
-
-console.table(game.placeMark("X", 0, 0));
-console.table(game.placeMark("O", 0, 0));
+// UI controller
+function uiController() {}
