@@ -32,8 +32,4 @@
   --radius-6: 6px;
   --radius-10: 10px;
   --radius-16: 16px;
-
-  /* Breakpoints */
-  --screen-tablet: 768px;
-  --screen-desktop: 1440px;
 }

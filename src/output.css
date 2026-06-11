@@ -186,17 +186,26 @@
   .table {
     display: table;
   }
-  .w-\[100\%\] {
-    width: 100%;
+  .h-13\.5 {
+    height: calc(var(--spacing) * 13.5);
+  }
+  .max-h-screen {
+    max-height: 100vh;
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-33 {
+    width: calc(var(--spacing) * 33);
   }
   .w-full {
     width: 100%;
   }
-  .border-collapse {
-    border-collapse: collapse;
+  .max-w-49\.5 {
+    max-width: calc(var(--spacing) * 49.5);
   }
-  .resize {
-    resize: both;
+  .max-w-115 {
+    max-width: calc(var(--spacing) * 115);
   }
   .flex-col {
     flex-direction: column;
@@ -204,8 +213,8 @@
   .items-center {
     align-items: center;
   }
-  .justify-around {
-    justify-content: space-around;
+  .justify-between {
+    justify-content: space-between;
   }
   .justify-center {
     justify-content: center;
@@ -213,33 +222,20 @@
   .gap-\(--spacing-400\,32px\) {
     gap: var(--spacing-400,32px);
   }
-  .gap-8 {
-    gap: calc(var(--spacing) * 8);
-  }
   .gap-200 {
     gap: var(--spacing-200);
   }
   .gap-300 {
     gap: var(--spacing-300);
   }
-  .gap-\[var\(--spacing-300\,24px\)\] {
-    gap: var(--spacing-300,24px);
-  }
   .self-stretch {
     align-self: stretch;
-  }
-  .rounded-\(--corner-radius-10\,10px\) {
-    border-radius: var(--corner-radius-10,10px);
   }
   .rounded-\(--corner-radius-16\,16px\) {
     border-radius: var(--corner-radius-16,16px);
   }
-  .rounded-\[var\(--corner-radius-10\,10px\)\] {
-    border-radius: var(--corner-radius-10,10px);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .rounded-10 {
+    border-radius: var(--radius-10);
   }
   .bg-slate-800 {
     background-color: var(--color-slate-800);
@@ -250,26 +246,20 @@
   .p-300 {
     padding: var(--spacing-300);
   }
-  .px-24 {
-    padding-inline: calc(var(--spacing) * 24);
+  .px-\[8px\] {
+    padding-inline: 8px;
   }
   .px-\[24px\] {
     padding-inline: 24px;
   }
-  .py-29 {
-    padding-block: calc(var(--spacing) * 29);
+  .py-2\.25 {
+    padding-block: calc(var(--spacing) * 2.25);
   }
   .py-29\.75 {
     padding-block: calc(var(--spacing) * 29.75);
   }
   .pt-250 {
     padding-top: var(--spacing-250);
-  }
-  .pt-\[119px\] {
-    padding-top: 119px;
-  }
-  .pt-\[var\(--spacing-250\,20px\)\] {
-    padding-top: var(--spacing-250,20px);
   }
   .pb-250 {
     padding-bottom: var(--spacing-250);
@@ -286,9 +276,6 @@
   .uppercase {
     text-transform: uppercase;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .shadow-\[0_-8px_0_0_\#10212A_inset\] {
     --tw-shadow: 0 -8px 0 0 var(--tw-shadow-color, #10212A) inset;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -297,44 +284,64 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+  .md\:px-38\.5 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 38.5);
+    }
+  }
+  .md\:pt-69\.25 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 69.25);
+    }
+  }
 }
 @layer base {
   .text-preset-1 {
     font-size: 40px;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
     line-height: 125%;
     letter-spacing: 2.5px;
+    text-transform: uppercase;
   }
   .text-preset-2 {
     font-size: 24px;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
     line-height: 125%;
     letter-spacing: 1.5px;
+    text-transform: uppercase;
   }
   .text-preset-3 {
     font-size: 20px;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
     line-height: 125%;
     letter-spacing: 1.25px;
+    text-transform: uppercase;
   }
   .text-preset-4 {
     font-size: 16px;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
     line-height: 125%;
     letter-spacing: 1px;
+    text-transform: uppercase;
   }
   .text-preset-5-bold {
     font-size: 14px;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+    font-style: normal;
+    font-weight: 700;
     line-height: 130%;
     letter-spacing: 0.9px;
   }
@@ -342,13 +349,17 @@
     font-size: 14px;
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
-    line-height: 125%;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
     letter-spacing: 0.9px;
   }
   .text-preset-6 {
     font-size: 12px;
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+    font-style: normal;
+    font-weight: 500;
     line-height: 125%;
     letter-spacing: 0.75px;
   }
@@ -421,11 +432,6 @@
 }
 * {
   border: 0.01px red solid;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-shadow {
   syntax: "*";
@@ -504,7 +510,6 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;

@@ -13,57 +13,33 @@
   <title>Frontend Mentor | Tic Tac Toe</title>
 </head>
 
-<body class="font-outfit">
+<body class="font-outfit max-h-screen bg-slate-900">
 
   <!-- New game menu start -->
 
 
-  <div class="bg-slate-900 py-29.75 px-[24px]  flex flex-col items-center gap-(--spacing-400,32px)">
+  <div
+    class=" min-h-screen flex flex-col items-center gap-(--spacing-400,32px) px-[24px] py-29.75 md:px-38.5 md:pt-69.25">
     <img src="assets/logo.svg" alt="Game logo">
     <div
-      class="flex flex-col items-center gap-200 p-300 rounded-(--corner-radius-16,16px) w-full bg-slate-800 shadow-[0_-8px_0_0_#10212A_inset]">
+      class="flex flex-col items-center gap-200 p-300 max-w-115 rounded-(--corner-radius-16,16px) w-full bg-slate-800 shadow-[0_-8px_0_0_#10212A_inset]">
       <div class="flex flex-col gap-300 justify-center items-center self-stretch">
         <h3 class="text-slate-300 text-center text-preset-4">Pick player 1's mark</h3>
-        <div class="flex justify-around gap-8 ">
-          <img src="/assets//O-mark-option.svg" alt="">
-          <img src="/assets//X-mark-option.svg" alt="">
+        <div class="flex items-center justify-between rounded-10 py-2.25 px-[8px] bg-slate-900">
+          <img class=" max-w-49.5 w-33 h-13.5 rounded-10" src="/assets/X-mark-option.svg" alt="">
+          <img class=" max-w-49.5 w-33 h-13.5 rounded-10" src="/assets/O-mark-option.svg" alt="">
         </div>
+        <p class="text-preset-5-bold text-slate-300 uppercase">Remember: X goes first</p>
       </div>
-      <p class="text-preset-5-bold text-slate-300 uppercase">Remember: X goes first</p>
-    </div>
 
-    <div class="flex flex-col gap-200 w-full">
+    </div>
+    <div class="flex flex-col gap-200 w-full max-w-115">
       <button class=" btn-1 pt-250 pb-250 text-preset-4">New Game (vs CPU)</button>
       <button class="btn-2 pt-250 pb-250 text-preset-4">New Game (vs player)</button>
     </div>
   </div>
 
 
-
-  <!-- New game menu end -->
-
-  <!-- Game board start -->
-
-  <!-- x/o icon --> turn
-
-  X (You) <!-- Your score -->
-  Ties <!-- Ties score -->
-  X (CPU) <!-- CPU score -->
-
-  Oh no, you lost
-  You won!
-  Player <!-- 1/2 --> wins!
-
-  <!-- x/o icon --> takes the round
-  Round tied
-  Restart game?
-
-  Quit
-  Next round
-  No, cancel
-  Yes, restart
-
-  <!-- Game board end -->
   <script src="index.js"></script>
 </body>
 
